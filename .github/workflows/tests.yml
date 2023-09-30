@@ -23,9 +23,6 @@ jobs:
         uses: browser-actions/setup-chrome@latest
 
       - name: Instalar chromedriver
-        uses: nanasess/setup-chromedriver@v2
-        with:
-          chromedriver-version: latest # Optional: do not specify to match Chrome's version
         run: |
           export DISPLAY=:99
           chromedriver --url-base=/wd/hub &
