@@ -31,4 +31,18 @@ jobs:
       - name: Run tests
         run: mvn test -Dtest=RunCucumber -Dbrowser=chrome-ci
 
+      - name: Gerar relatorio
+        if: always()
+        run: mvn cluecumber-report:reporting
+
+      - name: Arquivar relatorio
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: report-tests
+          path: '**/formated-report/'
+
+
+
+
 
