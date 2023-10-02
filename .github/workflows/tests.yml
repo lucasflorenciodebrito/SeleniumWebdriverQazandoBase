@@ -35,7 +35,7 @@ jobs:
         run: mvn cluecumber-report:reporting
 
       - name: Arquivar relatorio
-        uses: actions/upload-artifcat@v3
+        uses: actions/upload-artifact@v3
         with:
           name: report-tests
           path: '**/formated-report/'
